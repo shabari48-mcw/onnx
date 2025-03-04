@@ -1,0 +1,14 @@
+{
+    "model-name": "simplified-emil-net",
+    "model-format":"onnx",
+    "isolate":true,
+    "inference":true,
+    "isolate-config":{
+        "inputs":"reference_line_valid_mask",
+        "outputs":"/planning_decoder/decoder_blocks.0/Cast_1_output_0",
+        "input-shape":[1,1,99],
+        "output-shape":[6,1]
+    },
+    "import-path":"D:/Learn DL/Emil-Net/artifacts/simplified_emil_net.onnx",
+    "export-path": "D:/Learn DL/Emil-Net/artifacts/isolated_emil_net.onnx"
+}
