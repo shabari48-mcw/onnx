@@ -9,7 +9,7 @@ def setup_logging(log_directory='logs', log_filename='app.log', clear_logs=True)
     log_path = os.path.join(log_directory, log_filename)
 
     if clear_logs:
-        open(log_path, 'w').close()
+        open(log_path, 'a').close()
 
     logger = logging.getLogger(log_filename)
     logger.setLevel(logging.DEBUG)

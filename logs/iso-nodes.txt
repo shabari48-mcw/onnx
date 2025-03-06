@@ -59,6 +59,14 @@ Attributes: OrderedDict({'to': 1}), /planning_decoder/decoder_blocks.0/Tile (Til
 		Variable (/planning_decoder/decoder_blocks.0/Tile_output_0): (shape=[6, 1], dtype=float32)
 	]
 	Outputs: [
-		Variable (/planning_decoder/decoder_blocks.0/Cast_1_output_0): (shape=[6, 1], dtype=<class 'numpy.bool'>)
+		Variable (/planning_decoder/decoder_blocks.0/Cast_1_output_0): (shape=[6, 1], dtype=bool)
 	]
-Attributes: OrderedDict({'to': 9})]
+Attributes: OrderedDict({'to': 9}), /planning_decoder/decoder_blocks.0/r2r_attn/Where (Where)
+	Inputs: [
+		Variable (/planning_decoder/decoder_blocks.0/Cast_1_output_0): (shape=[6, 1], dtype=bool)
+		Constant (/encoder_blocks.0/attn/Constant_output_0): (shape=[], dtype=float32)
+		Constant (/planning_decoder/decoder_blocks.0/r2r_attn/Constant_1_output_0): (shape=[6, 1], dtype=float32)
+	]
+	Outputs: [
+		Variable (/planning_decoder/decoder_blocks.0/r2r_attn/Where_output_0): (shape=[6, 1], dtype=<class 'numpy.float32'>)
+	]]
