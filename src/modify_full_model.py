@@ -56,7 +56,8 @@ cast_node = gs.Node(
 # 2. Create a constant for negative infinity
 neg_inf_const = gs.Constant(
     name="neg_infinity_const",
-    values=np.array(float('-inf'), dtype=np.float32)
+    # values=np.array(float('-inf'), dtype=np.float32)
+    values= np.full((), 1e-4, dtype=np.float32) 
 )
 
 # 3. Multiply the casted condition with negative infinity
@@ -128,4 +129,4 @@ output_model = gs.export_onnx(graph)
 # # Save the modified model
 onnx.checker.check_model(output_model)
 print("Model Verified ")
-onnx.save(output_model, "D:/Learn DL/Emil-Net/src/orgmod_model.onnx")
+onnx.save(output_model, "D:/Learn DL/Emil-Net/src/10-4_model.onnx")

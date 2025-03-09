@@ -7,7 +7,7 @@ from pathlib import Path
 
   
 fullorg_model_path=Path("D:/Learn DL/Emil-Net/src/simplified_emil_net.onnx")
-mod_model_path=Path("D:/Learn DL/Emil-Net/src/orgmod_model.onnx")
+mod_model_path=Path("D:/Learn DL/Emil-Net/src/10-4_model.onnx")
 
 
 logger.info("<--------Evaluating Full Original Model-------------->\n\n")
@@ -52,8 +52,6 @@ output2 = session.run(["trajectories","scores"], inputs)
 logger.info("MOdified  Model Inference Completed\n")
 
 logger.info(f"Modified  Model Outputs: {output2}\n\n")
-
-
 logger.info("\n<------------- Comparison of MSE -------->\n\n")
 
 import torch

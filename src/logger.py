@@ -2,14 +2,11 @@ import os
 import logging
 from logging.handlers import RotatingFileHandler
 
-def setup_logging(log_directory='logs', log_filename='app.log', clear_logs=True):
-    if not os.path.exists(log_directory):
-        os.makedirs(log_directory)
-
-    log_path = os.path.join(log_directory, log_filename)
+def setup_logging(log_filename='output.log', clear_logs=True):
+    log_path = os.path.join(os.getcwd(), log_filename)
 
     if clear_logs:
-        open(log_path, 'a').close()
+        open(log_path, 'w').close()
 
     logger = logging.getLogger(log_filename)
     logger.setLevel(logging.DEBUG)
@@ -29,7 +26,7 @@ def setup_logging(log_directory='logs', log_filename='app.log', clear_logs=True)
     return logger
 
 
-logger = setup_logging(log_filename='app.log')
+logger = setup_logging(log_filename='output.log')
 
 
 def write_tensors_nodes(graph,org=True):
