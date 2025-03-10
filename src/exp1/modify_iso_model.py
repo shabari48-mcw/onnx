@@ -4,7 +4,7 @@ import numpy as np
 from rich import print
 
 # Alternative path format:
-model = onnx.load("D:/Learn DL/Emil-Net/src/isolated_emil_net.onnx")
+model = onnx.load("D:/Learn DL/Emil-Net/artifacts/isolated_emil_net.onnx")
 
 graph = gs.import_onnx(model)
 
