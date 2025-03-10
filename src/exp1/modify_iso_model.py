@@ -61,12 +61,13 @@ neg_inf_const = gs.Constant(
 
 # 3. Multiply the casted condition with negative infinity
 mul_output = gs.Variable(name=f"{condition.name}_mul_neg_inf", dtype=np.float32)
-mul_node = gs.Node(
+mul_node = gs.Node (
     op="Mul",
     name=f"mul_cond_neg_inf_{condition.name}",
     inputs=[cast_output, neg_inf_const], 
     outputs=[mul_output]
 )
+
 
 # 4. Create IsNaN node to identify NaN values
 isnan_output = gs.Variable(name=f"{mul_output.name}_isnan", dtype=np.bool_)

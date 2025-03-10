@@ -14,6 +14,18 @@
 
 - Task 3 : Replace the where node or  infinity with another logic and analyse MSE score
 
+## Experiment 1
+
+- Cast the boolean condition to float32 (True -> 1.0, False -> 0.0)
+
+- Multiply by negative infinity to get -∞ for True conditions and NaN for False conditions
+
+- Use IsNaN to detect NaN values
+
+- Use another Where node to replace NaNs with zeros while keeping non-NaN values
+
+![Alt text](images/exp1.png)
+
 ## Execution command
 
 Command to run:
